@@ -9,22 +9,24 @@
 
 <body>
   <h1>Users</h1>
-  <form action="post" action="">
+  <form method="post" action="{{route('users.add')}}">
+    @csrf
+    @method('post')
     <div>
-      <label for="name">Фамилия Имя Отчество</label>
-      <input type="text" name="name" placeholder="ФИО"/>
+      <label for="username">Фамилия Имя Отчество</label>
+      <input required type="text" id='username' name="username" placeholder="ФИО"/>
     </div>
     <div>
       <label for="email">Электронная почта</label>
-      <input type="text" name="email" placeholder="Электронная почта"/>
+      <input required type="text" id='email' name="email" placeholder="Электронная почта"/>
     </div>
     <div>
       <label for="gender">Пол</label>
-      <input type="text" name="gender" placeholder="Пол"/>
+      <input type="text" id='gender' name="gender" placeholder="Пол"/>
     </div>
     <div>
       <label for="birthday">Дата рождения</label>
-      <input type="date" name="birthday" placeholder="Дата рождения"/>
+      <input type="date" id='birthday' name="birthday" placeholder="Дата рождения"/>
     </div>
     <div>
       <input type="submit" value="Создать пользователя"/>
