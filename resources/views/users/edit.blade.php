@@ -8,6 +8,9 @@
 </head>
 
 <body>
+  <div>
+    <a href="{{route('users.index')}}">Back to main</a>
+  </div>
   <h1>Edit user</h1>
   @if($errors->any())
     <ul>

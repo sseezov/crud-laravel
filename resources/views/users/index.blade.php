@@ -15,6 +15,9 @@
   @endif
   </div>
   <div>
+    <div>
+      <a href="{{route('users.create')}}">Create user</a>
+    </div>
     <table>
       <tr>
         <th>Username</th>
