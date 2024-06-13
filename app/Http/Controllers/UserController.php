@@ -10,7 +10,8 @@ class UserController extends Controller
 {
     public function index()
     {
-        return view('users.index');
+        $users = User::all();
+        return view('users.index', ['users' => $users]);
     }
 
     public function create()
@@ -18,17 +19,33 @@ class UserController extends Controller
         return view('users.create');
     }
 
-    public function add(Request $request): RedirectResponse
+    public function add(Request $request)
     {
         // dd($request);
         $data = $request->validate([
             'username' => 'required',
-            'email' => 'required',
+            'email' => 'required|unique:users',
             'gender' => 'nullable',
             'birthday' => 'nullable',
         ]);
 
         $newUser = User::create($data);
         return redirect(route('users.index'));
+    }
+    public function edit(User $user)
+    {
+        return view('users.edit', ['user' => $user]);
+    }
+    public function update(User $user, Request $request)
+    {
+        $data = $request->validate([
+            'username' => 'required',
+            'email' => 'required',
+            'gender' => 'nullable',
+            'birthday' => 'nullable',
+        ]);
+        $user->update($data);
+
+        return redirect(route('users.index'))->with('success','User updated');
     }
 }
