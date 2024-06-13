@@ -23,3 +23,4 @@ Route::get('/users/create', [UserController::class, 'create'])->name('users.crea
 Route::post('/users', [UserController::class, 'add'])->name('users.add');
 Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
 Route::put('/users/{user}/update', [UserController::class, 'update'])->name('users.update');
+Route::delete('/users/{user}/delete', [UserController::class, 'delete'])->name('users.delete');

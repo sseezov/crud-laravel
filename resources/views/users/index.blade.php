@@ -11,8 +11,8 @@
   <h1>Users</h1>
   <div>
     @if (session()->has('success'))
-      <div>{{session('success')}}</div>
-    @endif
+    <div>{{session('success')}}</div>
+  @endif
   </div>
   <div>
     <table>
@@ -22,6 +22,7 @@
         <th>Gender</th>
         <th>Birthday</th>
         <th>Edit</th>
+        <th>Delete</th>
       </tr>
       @foreach ($users as $user)
       <tr>
@@ -30,6 +31,13 @@
       <td>{{$user->gender}}</td>
       <td>{{$user->birthday}}</td>
       <td><a href="{{route('users.edit', ['user' => $user])}}">Edit</a></td>
+      <td>
+        <form method="post" action="{{route('users.delete', ['user'=>$user])}}">
+        @csrf
+        @method('delete')
+        <input type="submit" value="Delete">
+        </form>
+      </td>
       </tr>
     @endforeach
     </table>
