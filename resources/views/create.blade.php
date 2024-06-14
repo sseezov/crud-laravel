@@ -33,8 +33,11 @@
       <input required type="text" id='email' name="email" placeholder="Электронная почта" />
     </div>
     <div>
-      <label for="gender">Пол</label>
-      <input type="text" id='gender' name="gender" placeholder="Пол" />
+      <label for="email">Пол</label>
+      <input type="radio" id="male" name="gender" value="male">
+      <label for="male">Male</label><br>
+      <input type="radio" id="female" name="gender" value="female">
+      <label for="female">Female</label>
     </div>
     <div>
       <label for="birthday">Дата рождения</label>
