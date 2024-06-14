@@ -30,14 +30,14 @@
     </div>
     <div>
       <label for="email">Электронная почта</label>
-      <input required type="text" id='email' name="email" placeholder="Электронная почта" />
+      <input type="email" id='email' name="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" placeholder="sophie@example.com" required/>
     </div>
     <div>
       <label for="email">Пол</label>
       <input type="radio" id="male" name="gender" value="male">
-      <label for="male">Male</label><br>
+      <label for="male">Мужской</label><br>
       <input type="radio" id="female" name="gender" value="female">
-      <label for="female">Female</label>
+      <label for="female">Женский</label>
     </div>
     <div>
       <label for="birthday">Дата рождения</label>
